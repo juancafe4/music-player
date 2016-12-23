@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom';
 import Search from './components/Search';
 // Import Details Component
 import Details from './components/Details';
+// Import Player Component
+import Player from './components/Player';
 
 // Component Class
 class App extends React.Component {
@@ -17,6 +19,7 @@ class App extends React.Component {
           <div>
             <Search />
             <Details title={"Track Title"}/>
+            <Player />
           </div>
         );
     }

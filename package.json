@@ -9,9 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "react-autocomplete": "^1.4.0"
   }
 }
