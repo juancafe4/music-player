@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "react-autocomplete": "^1.4.0"
   }
 }
