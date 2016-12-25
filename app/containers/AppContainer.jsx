@@ -9,10 +9,16 @@ class AppContainer extends React.Component {
         // Initial State
     this.state = {
         // What ever is returned, we just need these 3 values
-        track: {stream_url: '', title: '', artwork_url: ''}
+        track: {stream_url: '', title: '', artwork_url: ''},
+        playStatus: Sound.status.STOPPED,
+        elapsed: '00:00',
+        total: '00:00',
+        position: 0,
+        playFromPosition: 0,
     }
     this.randomTrack = this.randomTrack.bind(this);
     this.prepareUrl = this.prepareUrl.bind(this);
+    this.formatMilliseconds = this.formatMilliseconds.bind(this);
   }
   componentDidMount() {
     this.randomTrack();
@@ -34,6 +40,32 @@ class AppContainer extends React.Component {
         this.setState({track});
       })
       .catch(err => console.err);
+  }
+  handleSongPlaying(audio) {
+    this.setState({  elapsed: this.formatMilliseconds(audio.position),
+        total: this.formatMilliseconds(audio.duration),
+        position: audio.position / audio.duration, })
+  }
+  formatMilliseconds(milliseconds) {
+    // Format hours
+    var hours = Math.floor(milliseconds / 3600000);
+    milliseconds = milliseconds % 3600000;
+
+    // Format minutes
+    var minutes = Math.floor(milliseconds / 60000);
+    milliseconds = milliseconds % 60000;
+
+    // Format seconds
+    var seconds = Math.floor(milliseconds / 1000);
+    milliseconds = Math.floor(milliseconds % 1000);
+
+    // Return as string
+    return (minutes < 10 ? '0' : '') + minutes + ':' +
+    (seconds < 10 ? '0' : '') + seconds;
+  }
+  handleSongFinished () {
+    // Call random Track
+    this.randomTrack();
   }
   render() {
     return (
