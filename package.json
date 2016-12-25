@@ -4,8 +4,8 @@
   "description": "Music Player with Electron JS and React",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "electron": "webpack && electron .",
+    "web": "webpack -—target web && webpack-dev-server --target web"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "babel-loader": "^6.2.10",
     "electron-prebuilt": "^1.4.13",
     "electron-reload": "^1.1.0",
+    "is-electron-renderer": "^2.0.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "webpack": "^1.14.0",

@@ -14,6 +14,11 @@ import Progress from './components/Progress';
 // Import Footer Component
 import Footer from './components/Footer';
 
+
+console.log(
+  `is this running in electron.js?: `,
+  require(`is-electron-renderer`)
+);
 // Component Class
 class App extends React.Component {
     // render method is most important

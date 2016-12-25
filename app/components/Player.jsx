@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import ClassNames from 'classnames';
 
 class Player extends React.Component {

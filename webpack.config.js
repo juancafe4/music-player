@@ -6,7 +6,6 @@ const options = {
     path: __dirname,
     filename: 'bundle.js'
   },
-  target: 'electron-main',
   resolve: {
     extensions: ['', '.js', '.jsx'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
