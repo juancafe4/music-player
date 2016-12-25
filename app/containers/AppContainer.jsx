@@ -27,7 +27,9 @@ class AppContainer extends React.Component {
         total: '00:00',
         position: 0,
         playFromPosition: 0,
-    }
+        autoCompleteValue: '',
+        tracks: [],
+    };
     this.randomTrack = this.randomTrack.bind(this);
     this.prepareUrl = this.prepareUrl.bind(this);
     this.formatMilliseconds = this.formatMilliseconds.bind(this);
@@ -42,7 +44,7 @@ class AppContainer extends React.Component {
   randomTrack() {
     const URL = `https://api.soundcloud.com/playlists/209262931?client_id=${this.client_id}`;
     //Request for a playlist via Soundcloud using a client id
-    Axios.get(URL)
+    axios.get(URL)
       .then(({data}) => {
         // Store the length of the tracks
         const trackLength = data.tracks.length;
@@ -78,6 +80,20 @@ class AppContainer extends React.Component {
   handleSongFinished () {
     // Call random Track
     this.randomTrack();
+  }
+  handleChange(event, value) {
+
+    // Update input box
+    this.setState({autoCompleteValue: event.target.value});
+
+    const URL = `https://api.soundcloud.com/tracks?client_id=${this.client_id}&q=${value}`;
+    //Search for song with entered value
+    axios.get(URL)
+      .then( ({data}) 
+        // Update track state
+        this.setState({tracks: data});
+      )
+      .catch(err => console.err)
   }
   render() {
     return (
