@@ -1,12 +1,15 @@
 const path = require('path');
-module.exports = {
+const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
+const options = {
   entry:  './app/App.js',
   output: {
     path: __dirname,
     filename: 'bundle.js'
   },
+  target: 'electron-main',
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main'],
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
@@ -19,5 +22,10 @@ module.exports = {
         exclude: '/node-modules/',
       }
     ]
-  }
+  },
+  debug: true,
 }
+
+options.target = webpackTargetElectronRenderer(options);
+
+module.exports = options;

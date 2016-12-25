@@ -14,9 +14,11 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "electron-prebuilt": "^1.4.13",
+    "electron-reload": "^1.1.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-target-electron-renderer": "^0.4.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
