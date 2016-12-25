@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react-autocomplete": "^1.4.0"
+    "react-autocomplete": "^1.4.0",
+    "react-sound": "^0.5.2"
   }
 }
