@@ -16,12 +16,14 @@
     "electron-prebuilt": "^1.4.13",
     "electron-reload": "^1.1.0",
     "is-electron-renderer": "^2.0.1",
+    "json-loader": "^0.5.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "webpack": "^1.14.0",
     "webpack-target-electron-renderer": "^0.4.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "classnames": "^2.2.5",
     "react-autocomplete": "^1.4.0",
     "react-sound": "^0.5.2"

@@ -2,15 +2,15 @@ import React from 'react';
 import axios from 'axios';
 
 // Import Search Component
-import Search from './components/Search';
+import Search from '../components/Search';
 // Import Details Component
-import Details from './components/Details';
+import Details from '../components/Details';
 // Import Player Component
-import Player from './components/Player';
+import Player from '../components/Player';
 // Import Progress Component 
-import Progress from './components/Progress';
+import Progress from '../components/Progress';
 // Import Footer Component
-import Footer from './components/Footer';
+import Footer from '../components/Footer';
 
 // Sound component
 import Sound from 'react-sound';
@@ -89,11 +89,14 @@ class AppContainer extends React.Component {
     const URL = `https://api.soundcloud.com/tracks?client_id=${this.client_id}&q=${value}`;
     //Search for song with entered value
     axios.get(URL)
-      .then( ({data}) 
+      .then( ({data}) => {
         // Update track state
         this.setState({tracks: data});
-      )
+      })
       .catch(err => console.err)
+  }
+  handleSelect(value, item){
+    this.setState({ autoCompleteValue: value, track: item });
   }
   render() {
     return (

@@ -19,7 +19,8 @@ const options = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: '/node-modules/',
-      }
+      },
+      { test: /\.json$/, loader: 'json' },
     ]
   },
   debug: true,
