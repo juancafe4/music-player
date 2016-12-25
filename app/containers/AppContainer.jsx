@@ -1,5 +1,17 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
+// Import Search Component
+import Search from './components/Search';
+// Import Details Component
+import Details from './components/Details';
+// Import Player Component
+import Player from './components/Player';
+// Import Progress Component 
+import Progress from './components/Progress';
+// Import Footer Component
+import Footer from './components/Footer';
+
 // Sound component
 import Sound from 'react-sound';
 class AppContainer extends React.Component {
@@ -70,6 +82,12 @@ class AppContainer extends React.Component {
   render() {
     return (
       <div className="scotch_music">
+        <Search
+          autoCompleteValue={this.state.autoCompleteValue}
+          tracks={this.state.tracks}
+          handleSelect={this.handleSelect.bind(this)}
+          handleChange={this.handleChange.bind(this)}
+        />
         <Sound 
           url={this.prepareUrl(this.state.track.stream_url)}
           playStatus={this.state.playStatus}

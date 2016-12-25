@@ -3,16 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// Import Search Component
-import Search from './components/Search';
-// Import Details Component
-import Details from './components/Details';
-// Import Player Component
-import Player from './components/Player';
-// Import Progress Component 
-import Progress from './components/Progress';
-// Import Footer Component
-import Footer from './components/Footer';
+// Import App Container
+import AppContainer from './containers/AppContainer';
 
 
 console.log(
@@ -26,14 +18,7 @@ class App extends React.Component {
     render() {
         return (
           <div>
-            <Search />
-            <Details title={"Track Title"}/>
-            <Player />
-            <Progress
-              position={'0.3'}
-              elapsed={'00:00'}
-              total={'0:40'}/>
-            <Footer />
+            <AppContainer />
           </div>
         );
     }
