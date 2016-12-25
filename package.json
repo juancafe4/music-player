@@ -2,8 +2,9 @@
   "name": "music-player",
   "version": "1.0.0",
   "description": "Music Player with Electron JS and React",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +13,7 @@
     "babel": "^6.5.2",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
+    "electron-prebuilt": "^1.4.13",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "webpack": "^1.14.0"
