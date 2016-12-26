@@ -119,6 +119,9 @@ class AppContainer extends React.Component {
   backward(){
     this.setState({playFromPosition: this.state.playFromPosition-=1000*10});
   }
+  xlArtwork(url){
+    return url.replace(/large/, 't500x500');
+  }
   render() {
     const scotchStyle = {
       width: '500px',
@@ -129,7 +132,7 @@ class AppContainer extends React.Component {
       ),   url(${this.xlArtwork(this.state.track.artwork_url)})`
     }
     return (
-      <div className="scotch_music">
+      <div className="scotch_music" style={scotchStyle}>
         <Search
           autoCompleteValue={this.state.autoCompleteValue}
           tracks={this.state.tracks}

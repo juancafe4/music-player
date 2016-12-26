@@ -2,7 +2,7 @@
 const electron = require('electron');
 const {app, BrowserWindow} = electron;
 
-require('electron-reload')(__dirname+'/public');
+//require('electron-reload')(__dirname+'/public');
 
 let mainWindow = null;
 
